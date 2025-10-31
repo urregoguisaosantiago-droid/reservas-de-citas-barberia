@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Barbería Clásica ✂️ - Reservas</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(90deg, #c8102e, #ffffff, #0033a0);
+            color: #000;
+            padding: 20px;
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        form {
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 400px;
+            margin: 40px auto;
+            text-align: left;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            background: linear-gradient(90deg, #c8102e, #0033a0);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        /* Botón Ver Reservas */
+        .ver-reservas {
+            display: inline-block;
+            margin-top: 25px;
+            background: #0033a0;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .ver-reservas:hover {
+            background: #002366;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header>💈 Barbería Clásica - Reserva tu cita</header>
+
+    <form action="/reservar" method="POST">
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" required>
+
+        <label for="servicio">Servicio</label>
+        <select id="servicio" name="servicio" required>
+            <option value="">Selecciona un servicio</option>
+            <option value="Corte de Cabello - $15.000">Corte de Cabello - $15.000</option>
+            <option value="Afeitado / Barba - $12.000">Afeitado / Barba - $12.000</option>
+            <option value="Corte + Barba - $20.000">Corte + Barba - $20.000</option>
+            <option value="Color / Tintura - $35.000">Color / Tintura - $35.000</option>
+        </select>
+
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="hora">Hora</label>
+        <input type="time" id="hora" name="hora" required>
+
+        <button type="submit">Reservar Cita</button>
+    </form>
+
+    <!-- Botón funcional -->
+    <a class="ver-reservas" href="/ver_reservas">📅 Ver Reservas</a>
+</body>
+</html>
+

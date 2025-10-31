@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservas - Barbería Clásica</title>
+    <style>
+        body { background: #111; color: #fff; font-family: 'Poppins', sans-serif; text-align: center; }
+        table { width: 80%; margin: 40px auto; border-collapse: collapse; background: #222; border-radius: 10px; }
+        th, td { padding: 12px; border-bottom: 1px solid #444; }
+        th { background: linear-gradient(90deg, #c8102e, #0033a0); }
+        tr:hover { background: #333; }
+        a { color: #fff; background: #0033a0; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px; }
+        a:hover { background: #c8102e; }
+    </style>
+</head>
+<body>
+    <h1>📋 Reservas Registradas</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Servicio</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+        </tr>
+        {% for reserva in reservas %}
+        <tr>
+            <td>{{ reserva['id'] }}</td>
+            <td>{{ reserva['nombre'] }}</td>
+            <td>{{ reserva['telefono'] }}</td>
+            <td>{{ reserva['servicio'] }}</td>
+            <td>{{ reserva['fecha'] }}</td>
+            <td>{{ reserva['hora'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/">Volver</a>
+</body>
+</html>
